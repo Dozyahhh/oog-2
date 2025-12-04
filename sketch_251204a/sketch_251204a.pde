@@ -2,6 +2,7 @@ player player;
 shark shark;
 shark[] sharks;
 jelly jelly;
+sub sub;
 int sharkCount = 3;
 
 void setup() {
@@ -10,6 +11,7 @@ void setup() {
   player = new player(180, 60);
   
   jelly = new jelly (125,100);
+  sub = new sub(60, 360);
 
   sharks = new shark[sharkCount];
   for (int i = 0; i < sharkCount; i++) {
@@ -25,6 +27,9 @@ void draw() {
 
 jelly.update();
 jelly.display();
+
+sub.update();
+sub.display();
 
   for (int i = 0; i < sharkCount; i++) {
     sharks[i].update();
