@@ -3,7 +3,7 @@ class shark {
   PVector vel;    
   
   shark(float x, float y) {
-    pos = new PVector(x, y);
+    pos = new PVector(x, random(250, 300));
     vel = new PVector(2, 0); 
   }
 
@@ -11,9 +11,8 @@ class shark {
 
     pos.add(vel);
 
- 
     if (pos.x < 30 || pos.x > width - 30) {
-      vel.x *= -1;  
+      vel.x *= -1;
     }
   }
 
@@ -30,7 +29,6 @@ class shark {
     rect(0, 0, 60, 22, 6);
 
     triangle(-25, 0, -35, -12, -35, 12);
-    // нос
     triangle(30, 0, 15, -8, 15, 8);
 
     triangle(0, 10, -10, -25, 10, -10);
