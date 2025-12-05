@@ -22,7 +22,6 @@ class chest {
     if (taken) return;
 
     rectMode(CENTER);
-
     noStroke();
     fill(255, 150, 0);  
     rect(x, y, w, h, 10);

@@ -64,7 +64,7 @@ void draw() {
     fill(255);
     textAlign(CENTER, CENTER);
     textSize(26);
-    text("You win", width/2, height/2 - 40);
+    text("GAME OVER", width/2, height/2 - 40);
 
     rectMode(CORNER);
     fill(255);
