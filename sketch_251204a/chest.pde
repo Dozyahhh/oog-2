@@ -11,17 +11,20 @@ class chest {
     y = Y;
   }
 
-  void update() {
-    // логика сундука (анимация, и т.п.) при желании
+  void respawn() {
+    x = random(40, width - 40);
+    y = random(300, 380);
   }
 
+  void update() {}
+
   void display() {
-    if (taken) return; 
+    if (taken) return;
 
     rectMode(CENTER);
 
     noStroke();
-    fill(0);  
+    fill(255, 150, 0);  
     rect(x, y, w, h, 10);
 
     fill(255);
