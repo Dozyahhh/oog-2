@@ -2,7 +2,10 @@ class player {
   float x;
   float y;
   float vy = 0;
+  float vx = 0;
   float gravity = 0.002;
+  float lift = -0.15;
+  float push = 3;
   
   player(float X, float Y) {
     x = X;
@@ -12,18 +15,33 @@ class player {
   void update() {
     float speed = 2.5;
 
-    if (keyCode == LEFT) {
-      x -= speed;
-    }
-    if (keyCode == RIGHT) {
-      x += speed;
-    }
+    if (keyCode == LEFT)  vx = -speed;
+    if (keyCode == RIGHT) vx = speed;
+    if (keyCode == UP)    vy += lift;
 
+    x += vx;
     vy += gravity;
     y += vy;
 
+    vx *= 0.9;
+
+    if (x < 20) {
+      x = 20;
+      vx = push;
+    }
+
+    if (x > width - 20) {
+      x = width - 20;
+      vx = -push;
+    }
+
     if (y > height - 50) {
       y = height - 50;
+      vy = 0;
+    }
+
+    if (y < 30) {
+      y = 30;
       vy = 0;
     }
   }
@@ -35,7 +53,7 @@ class player {
     fill(255, 204, 0);
     ellipse(x, y, 30, 40);  
     
-    fill(255, 255, 255);
+    fill(255);
     ellipse(x, y, 15, 15);
    
     fill(255, 204, 0);

@@ -56,9 +56,22 @@ void draw() {
     for (int i = 0; i < sharkCount; i++) {
       sharks[i].update();
       sharks[i].display();
+
+      if (dist(player.x, player.y, sharks[i].pos.x, sharks[i].pos.y) < 35) {
+        gameOver = true;
+      }
+    }
+
+    if (dist(player.x, player.y, jelly.pos.x, jelly.pos.y) < 35) {
+      gameOver = true;
+    }
+
+    if (dist(player.x, player.y, sub.x, sub.y) < 45) {
+      gameOver = true;
     }
 
   } else {
+
     background(0, 20, 50);
 
     fill(255);
