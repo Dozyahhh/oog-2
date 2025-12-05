@@ -1,4 +1,4 @@
-class player {
+class player { //added player class
   float x;
   float y;
   float vy = 0;
@@ -6,7 +6,7 @@ class player {
   float gravity = 0.002;
   float lift = -0.15;
   float push = 3;
-  
+  //input physics numbers
   player(float X, float Y) {
     x = X;
     y = Y;
@@ -17,7 +17,7 @@ class player {
 
     if (keyCode == LEFT)  vx = -speed;
     if (keyCode == RIGHT) vx = speed;
-    if (keyCode == UP)    vy += lift;
+    if (keyCode == UP)    vy += lift; //movement
 
     x += vx;
     vy += gravity;
@@ -41,7 +41,7 @@ class player {
     }
 
     if (y < 30) {
-      y = 30;
+      y = 30; 
       vy = 0;
     }
   }
@@ -62,5 +62,5 @@ class player {
     
     fill(255, 204, 0);
     triangle(x - 20, y + 28, x + 20, y + 28, x, y + 12);
-  }
+  } //ship
 }

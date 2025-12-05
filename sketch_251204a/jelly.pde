@@ -31,6 +31,6 @@ class jelly {
     line(pos.x - 10, pos.y + 10, pos.x - 10, pos.y + 30 + legOffset);
     line(pos.x - 3,  pos.y +  8, pos.x - 3,  pos.y + 30 + legOffset);
     line(pos.x + 3,  pos.y +  8, pos.x + 3,  pos.y + 30 + legOffset);
-    line(pos.x + 10, pos.y + 10, pos.x + 10, pos.y + 30 + legOffset);
+    line(pos.x + 10, pos.y + 10, pos.x + 10, pos.y + 30 + legOffset); 
   }
 }

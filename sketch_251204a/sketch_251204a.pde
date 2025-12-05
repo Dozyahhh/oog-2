@@ -26,7 +26,7 @@ void setup() {
   chest = new chest(0, 0);
   chest.respawn();
 
-  sharks = new shark[sharkCount];
+  sharks = new shark[sharkCount]; //array for shark
   for (int i = 0; i < sharkCount; i++) {
     sharks[i] = new shark(random(200, 350), random(200, 300));
   }
@@ -46,11 +46,11 @@ void draw() {
     sub.display();
 
     chest.update();
-    chest.display();
+    chest.display(); 
 
     if (!chest.taken && chest.touch(player)) {
       chest.taken = true;
-      gameOver = true;
+      gameOver = true; //condtitions for win
     }
 
     for (int i = 0; i < sharkCount; i++) {
@@ -67,7 +67,7 @@ void draw() {
     }
 
     if (dist(player.x, player.y, sub.x, sub.y) < 45) {
-      gameOver = true;
+      gameOver = true; //condtions
     }
 
   } else {
@@ -85,7 +85,7 @@ void draw() {
 
     fill(0);
     textSize(16);
-    text("Start again", width/2, buttonY + buttonHeight/2);
+    text("Start again", width/2, buttonY + buttonHeight/2); //text after finish
   }
 }
 
@@ -103,7 +103,7 @@ void restartGame() {
   player.y = 60;
 
   chest.taken = false;
-  chest.respawn();
+  chest.respawn(); //how to restart chess and game
 
   gameOver = false;
 }

@@ -4,7 +4,7 @@ class shark {
   
   shark(float x, float y) {
     pos = new PVector(x, y);
-    vel = new PVector(2, 0); 
+    vel = new PVector(2, 0); //pos
   }
 
   void update() {
@@ -30,14 +30,14 @@ class shark {
     rect(0, 0, 60, 22, 6);
 
     triangle(-25, 0, -35, -12, -35, 12);
-    // нос
+
     triangle(30, 0, 15, -8, 15, 8);
 
     triangle(0, 10, -10, -25, 10, -10);
 
     fill(220, 80, 80);
-    ellipse(15, -4, 6, 6);
+    ellipse(15, -4, 6, 6); //shark
 
-    popMatrix();
+    popMatrix(); 
   }
 }
